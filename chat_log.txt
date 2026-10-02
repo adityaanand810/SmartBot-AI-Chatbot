@@ -1,0 +1,133 @@
+[2026-10-01T00:56:31.450075] Threading test started.
+[2026-10-01T00:56:36.459296500] Threading test completed.
+[2026-10-01T01:40:12.677450600] ERROR: Gemini API Error: HTTP 503
+{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+
+[2026-10-01T01:53:33.653844400] ERROR: Gemini API Error: HTTP 503
+{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+
+[2026-10-01T01:56:04.108892400] USER: hi
+[2026-10-01T01:56:04.109892300] BOT: Sorry, I don't know the answer to that question.
+[2026-10-01T01:56:20.398062800] USER: what is java
+[2026-10-01T01:56:20.400058100] BOT: Java is an object-oriented programming language.
+[2026-10-01T01:57:00.294372100] ERROR: Gemini API Error: HTTP 503
+{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+
+[2026-10-01T14:49:24.364114500] USER: what is weather
+[2026-10-01T14:49:24.373111800] BOT: Sorry, I don't know the answer to that question.
+[2026-10-01T15:08:28.104057600] USER: hii
+[2026-10-01T15:08:28.107057700] BOT: Sorry, I don't know the answer to that question.
+[2026-10-01T15:09:01.865651100] USER: hello
+[2026-10-01T15:09:01.866653900] BOT: Hello! How can I help you?
+[2026-10-01T15:09:08.245501600] USER: ai
+[2026-10-01T15:09:08.246504] BOT: AI stands for Artificial Intelligence.
+[2026-10-01T15:40:34.236949600] USER: hello
+[2026-10-01T15:40:34.239119500] BOT: Hello! How can I help you today?
+[2026-10-01T15:40:38.436532300] USER: hello
+[2026-10-01T15:40:38.437532500] BOT: Hello! How can I help you?
+[2026-10-01T15:41:09.466240400] USER: ai
+[2026-10-01T15:41:09.467335] BOT: AI stands for Artificial Intelligence.
+[2026-10-02T12:52:44.996072300] ERROR: Gemini API Error: HTTP 503
+{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+
+[2026-10-02T12:52:59.224125300] USER: hello
+[2026-10-02T12:52:59.225123300] BOT: Hello! How can I help you?
+[2026-10-02T13:04:30.155421200] USER: hi
+[2026-10-02T13:04:30.157427] BOT: Hello! How can I help you today?
+[2026-10-02T13:05:02.612029600] ERROR: Gemini API Error: HTTP 503
+{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+
+[2026-10-02T13:10:42.119737600] USER: write a java program
+[2026-10-02T13:10:42.120737900] BOT: Here is a complete, beginner-friendly Java program: an interactive **Number Guessing Game**. It demonstrates key Java concepts including variables, user input (`Scanner`), loops (`while`), conditionals (`if/else`), and random number generation (`Random`).
+
+### Java Code
+
+```java
+import java.util.Random;
+import java.util.Scanner;
+
+public class NumberGuessingGame {
+    public static void main(String[] args) {
+        // Create scanner for reading input and random generator
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        // Generate a secret number between 1 and 100
+        int secretNumber = random.nextInt(100) + 1;
+        int attempts = 0;
+        int guess = 0;
+
+        System.out.println("=== Welcome to the Number Guessing Game! ===");
+        System.out.println("I'm thinking of a number between 1 and 100.");
+        System.out.println("Can you guess what it is?");
+
+        // Loop until the player guesses correctly
+        while (guess != secretNumber) {
+            System.out.print("\nEnter your guess: ");
+
+            // Validate that the user entered an integer
+            if (!scanner.hasNextInt()) {
+                System.out.println("Please enter a valid whole number.");
+                scanner.next(); // Clear the invalid input
+                continue;
+            }
+
+            guess = scanner.nextInt();
+            attempts++;
+
+            if (guess u003c 1 || guess u003e 100) {
+                System.out.println("Remember, the number is between 1 and 100.");
+            } else if (guess u003c secretNumber) {
+                System.out.println("Too low! Try again.");
+            } else if (guess u003e secretNumber) {
+                System.out.println("Too high! Try again.");
+            } else {
+                System.out.println("\nCongratulations! You guessed it!");
+                System.out.println("The secret number was: " + secretNumber);
+                System.out.println("It took you " + attempts + " attempts.");
+            }
+        }
+
+        scanner.close();
+    }
+}
+```
+
+---
+
+### How to Run It
+
+1. **Save the file**: Save the code as `NumberGuessingGame.java` (the filename must match the `public class` name).
+2. **Compile**: Open a terminal/command prompt, navigate to the folder, and run:
+   ```bash
+   javac NumberGuessingGame
